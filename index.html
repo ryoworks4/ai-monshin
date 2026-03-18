@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI問診票サポート | クリニック向けAIツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>AI問診票サポート</h1>
+    <p>患者さんの症状をAIが問診票形式に整理します</p>
+</header>
+
+<main>
+    <div class="container">
+        <!-- 診療科選択 -->
+        <label>診療科を選択</label>
+        <div class="dept-buttons">
+            <button class="dept-btn active" data-dept="internal">🏥 内科</button>
+            <button class="dept-btn" data-dept="orthopedic">🦴 整形外科</button>
+            <button class="dept-btn" data-dept="dermatology">🩹 皮膚科</button>
+            <button class="dept-btn" data-dept="ent">👂 耳鼻咽喉科</button>
+            <button class="dept-btn" data-dept="ophthalmology">👁 眼科</button>
+            <button class="dept-btn" data-dept="pediatrics">👶 小児科</button>
+        </div>
+
+        <!-- 症状入力 -->
+        <label for="symptom-input">症状を自由に入力してください</label>
+        <textarea id="symptom-input" rows="5" maxlength="500" placeholder="例: 3日前から喉が痛くて、昨日から38度の熱が出ています。咳も少し出ます。"></textarea>
+        <div class="char-count"><span id="char-count">0</span> / 500</div>
+
+        <!-- サンプル -->
+        <div class="examples">
+            <p class="examples-label">入力例（クリックで入力）</p>
+            <div class="example-tags">
+                <button class="example-tag">3日前から喉が痛くて熱が38度あります</button>
+                <button class="example-tag">朝起きたら腰が痛くて動けません</button>
+                <button class="example-tag">2週間前から腕に赤い発疹が出ています</button>
+                <button class="example-tag">子どもが昨日から咳と鼻水が止まりません</button>
+            </div>
+        </div>
+
+        <!-- 生成ボタン -->
+        <button id="generate-btn" class="primary-btn">問診票を生成する</button>
+
+        <!-- 結果表示 -->
+        <div class="output-section">
+            <div id="result-area" class="result-area">
+                <p class="placeholder-text">症状を入力して「問診票を生成する」を押してください</p>
+            </div>
+            <button id="copy-btn" class="copy-btn" style="display:none;">コピー</button>
+        </div>
+    </div>
+
+    <!-- 使い方 -->
+    <div class="how-to-use">
+        <h2>使い方</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <p>診療科を選択</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <p>症状を自由に入力</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <p>AIが問診票に整理</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>※ このツールはデモ版です。実際の診断には使用しないでください</p>
+    <p>※ 生成された問診票は必ず医療従事者が確認してください</p>
+    <p>&copy; 2025 RyoWorks</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
